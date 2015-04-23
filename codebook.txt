@@ -1,0 +1,24 @@
+This document describes the data in tidydataset.txt. In the data folder you can find the raw data. The following steps
+have been taken to clean and transform that data
+
+- data merged into one big dataset (from training and test folders).  !!!NB: the Inertial Signals were ignored!
+- data was merged with data from the subjects and activity
+- column names were renamed (no more '(' ')', and no more 'bodyBody')
+- I created two for-loops to iterate through this dataset and construct a new dataset that calculated the mean for 
+  each activity and each subject
+
+RESULTING DATASET
+
+Columns
+- variable =  (the variable over which the mean is calculated. These include variables that are described by the cookbook in data/features_info.txt )
+- mean = (the calculated mean for the variable)
+- activity = the mean is calculated over a activity. value is NA if the mean was calculated over a subject
+- subject  = the mean is calculated over a subject. value is NA if the mean was calculated over an activity
+
+number of observations:
+
+The number of observations is 2844. This is to be expected:
+
+There are 79 variables, 6 activities and 30 subjects
+
+79 * 30 + 79 * 6 = 2844
